@@ -29,7 +29,6 @@ Alur kerja kalkulator ini berpusat pada pembaruan nilai pada layar *input* (`#ou
 Kode di bawah ini adalah inti logika yang mengatur fungsi kalkulator, mulai dari input hingga perhitungan.
 
 JavaScript
-
 let outputscreen = document.getElementById("outputscreen");
 
 // 1. Menampilkan angka/operator yang diklik
