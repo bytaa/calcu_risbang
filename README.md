@@ -27,35 +27,67 @@ Alur kerja kalkulator ini berpusat pada pembaruan nilai pada layar *input* (`#ou
 
 📜 Cuplikan Kode Utama (JavaScript)
 Kode JavaScript ini menangani seluruh logika interaksi dan perhitungan, mulai dari menampilkan input hingga menjalankan operasi matematika.
+<!-- Kalkulator Sederhana -->
+<div class="Calculator">
+  <!-- Layar output kalkulator -->
+  <input type="text" placeholder="0" id="outputscreen" />
 
-// Menargetkan elemen input display
-let outputscreen = document.getElementById("outputscreen");
+  <!-- Tombol-tombol fungsi -->
+  <button onclick="Clear()">Cl</button>       <!-- Bersihkan semua input -->
+  <button onclick="deleteLast()">DEL</button> <!-- Hapus karakter terakhir -->
+  <button onclick="display('%')">%</button>   <!-- Operator persen -->
+  <button onclick="display('/')">/</button>   <!-- Operator bagi -->
 
-// Fungsi untuk menambahkan angka/operator ke display
-function display(num) {
-  outputscreen.value += num;
-}
+  <!-- Tombol angka -->
+  <button onclick="display('7')">7</button>
+  <button onclick="display('8')">8</button>
+  <button onclick="display('9')">9</button>
+  <button onclick="display('*')">*</button>   <!-- Operator kali -->
 
-// Fungsi untuk melakukan perhitungan
-function Calculate() {
-  try {
-    // Menggunakan eval() untuk mengevaluasi ekspresi matematika
-    outputscreen.value = eval(outputscreen.value);
-  } catch (err) {
-    alert("Invalid"); // Menampilkan pesan error jika terjadi kesalahan
+  <button onclick="display('4')">4</button>
+  <button onclick="display('5')">5</button>
+  <button onclick="display('6')">6</button>
+  <button onclick="display('-')">-</button>   <!-- Operator kurang -->
+
+  <button onclick="display('1')">1</button>
+  <button onclick="display('2')">2</button>
+  <button onclick="display('3')">3</button>
+  <button onclick="display('+')">+</button>   <!-- Operator tambah -->
+
+  <button onclick="display('.')">.</button>  <!-- Titik desimal -->
+  <button onclick="display('0')">0</button>
+  <button onclick="Calculate()" class="equal">=</button> <!-- Hitung hasil -->
+</div>
+
+<script>
+  // Ambil elemen input layar kalkulator
+  let outputscreen = document.getElementById("outputscreen");
+
+  // Fungsi untuk menampilkan input di layar
+  function display(num) {
+    outputscreen.value += num;
   }
-}
 
-// Fungsi untuk menghapus semua input
-function Clear() {
-  outputscreen.value = "";
-}
+  // Fungsi untuk menghitung ekspresi matematika
+  function Calculate() {
+    try {
+      outputscreen.value = eval(outputscreen.value); // eval menghitung string matematika
+    } catch {
+      alert("Invalid Input"); // Tampilkan pesan jika input salah
+    }
+  }
 
-// Fungsi untuk menghapus karakter terakhir dari input
-function deleteLast() {
-  // Menggunakan slice(0, -1) untuk menghapus karakter terakhir
-  outputscreen.value = outputscreen.value.slice(0, -1); 
-}
+  // Fungsi untuk membersihkan layar
+  function Clear() {
+    outputscreen.value = "";
+  }
+
+  // Fungsi untuk menghapus karakter terakhir
+  function deleteLast() {
+    outputscreen.value = outputscreen.value.slice(0, -1);
+  }
+</script>
+
 
 ## ⌨️ Contoh Input & Output
 
