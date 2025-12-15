@@ -27,28 +27,34 @@ Alur kerja kalkulator ini berpusat pada pembaruan nilai pada layar *input* (`#ou
 
 📜 Cuplikan Kode Utama (JavaScript)
 Kode JavaScript ini menangani seluruh logika interaksi dan perhitungan, mulai dari menampilkan input hingga menjalankan operasi matematika.
+
 let outputscreen = document.getElementById("outputscreen");
 
+// 1. Menampilkan angka/operator yang diklik
 function display(num) {
   outputscreen.value += num;
 }
 
+// 2. Melakukan perhitungan ekspresi
 function Calculate() {
   try {
+    // Menggunakan eval() untuk mengevaluasi ekspresi
     outputscreen.value = eval(outputscreen.value);
   } catch (err) {
-    alert("Invalid");
+    alert("Invalid"); // Menangani input yang tidak valid
   }
 }
 
+// 3. Menghapus seluruh konten display
 function Clear() {
   outputscreen.value = "";
 }
 
+// 4. Menghapus karakter terakhir
 function deleteLast() {
-  outputscreen.value = outputscreen.value.slice(0, -1); 
+  // Menggunakan slice(0, -1) untuk menghilangkan karakter terakhir
+  outputscreen.value = outputscreen.value.slice(0, -1);
 }
-
 
 ## ⌨️ Contoh Input & Output
 
