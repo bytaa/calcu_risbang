@@ -10,8 +10,9 @@
   <body>
     <div class="container">
       <div class="Calculator">
+        <input type="text" placeholder="0" id="outputscreen" />
         <button onclick="Clear()">Cl</button>
-        <button onclick="del()">DEL</button>
+        <button onclick="deleteLast()">DEL</button>
         <button onclick="display(`%`)">%</button>
         <button onclick="display(`/`)">/</button
         ><button onclick="display(`7`)">7</button>
@@ -46,7 +47,7 @@
       function Clear() {
         outputscreen.value = "";
       }
-      function del() {
+      function deleteLast() {
         outputscreen.value = outputscreen.value.slice(0, -1);
       }
     </script>
