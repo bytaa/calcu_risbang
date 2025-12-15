@@ -25,7 +25,11 @@ Alur kerja kalkulator ini berpusat pada pembaruan nilai pada layar *input* (`#ou
       * Tombol **`Cl`** (Clear) memanggil `Clear()`, yang mengatur nilai *output screen* menjadi kosong (`""`).
       * Tombol **`DEL`** (Delete) memanggil `del()`. *Namun, **perlu diperhatikan** bahwa implementasi saat ini (`outputscreen.value.slice(0 - 1);`) **tidak berfungsi dengan benar**; seharusnya menggunakan `slice(0, -1)` untuk menghapus karakter terakhir.*
 
-## 📜 Cuplikan Kode Utama (JavaScript)
+4. 📜 Cuplikan Kode Utama (JavaScript)
+Kode JavaScript mengelola tiga fungsi utama: input, perhitungan, dan penghapusan.
+
+JavaScript
+
 let outputscreen = document.getElementById("outputscreen");
 
 // 1. Menampilkan angka/operator yang diklik
