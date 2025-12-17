@@ -23,7 +23,7 @@ Alur kerja kalkulator ini berpusat pada pembaruan nilai pada layar *input* (`#ou
       * Terdapat blok `try...catch` untuk menangani *error* (misalnya, jika ekspresi tidak valid), yang akan menampilkan *alert* "Invalid".
 3.  **Hapus:**
       * Tombol **`Cl`** (Clear) memanggil `Clear()`, yang mengatur nilai *output screen* menjadi kosong (`""`).
-      * Tombol **`DEL`** (Delete) memanggil `deleteLast()`. *Namun, **perlu diperhatikan** bahwa implementasi saat ini (`outputscreen.value.slice(0 - 1);`) **tidak berfungsi dengan benar**; seharusnya menggunakan `slice(0, -1)` untuk menghapus karakter terakhir.*
+      * Tombol **`DEL`** (Delete) memanggil `deleteLast()` untuk menghapus karakter terakhir. 
 
 📜 Cuplikan Kode Utama (JavaScript)
 Kode JavaScript mengelola tiga fungsi utama: input, perhitungan, dan penghapusan.
